@@ -8,11 +8,11 @@ export function* init() {
   // yield localStorage.clear();
 }
 
-export function* signIn({ username, password }) {
+export function* signIn({ email, password }) {
   try {
-    const response = yield call(api.post, 'AreaUsuario/Usuario/Autenticar', {
-      Usuario: username,
-      Senha: password,
+    const response = yield call(api.post, 'sessions', {
+      email,
+      password,
     });
     console.tron.log(response);
     localStorage.setItem('@oficina5:token', response.data.Token);

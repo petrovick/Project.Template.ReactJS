@@ -7,12 +7,12 @@ import Button from '../../../styles/components/Button';
 import { Container, SignForm } from './styles';
 
 function SignIn() {
-  const [username, setUsername] = useState('petrovickg');
-  const [password, setPassword] = useState('123');
+  const [email, setEmail] = useState('petrovickg@officina5.com.br');
+  const [password, setPassword] = useState('12345678');
   const dispatch = useDispatch();
 
   function handleInputUsernameChange(e) {
-    setUsername(e.target.value);
+    setEmail(e.target.value);
   }
 
   function handleInputPasswordChange(e) {
@@ -22,7 +22,7 @@ function SignIn() {
   function handleSubmit(e) {
     e.preventDefault(); // Previnir de redirecionar pra próxima página
     console.log('Chegou aqui');
-    dispatch({ type: 'SIGN_IN_REQUEST', username, password });
+    dispatch({ type: 'SIGN_IN_REQUEST', email, password });
   }
 
   return (
@@ -34,7 +34,7 @@ function SignIn() {
         <input
           type="text"
           name="email"
-          value={username}
+          value={email}
           onChange={handleInputUsernameChange}
         />
 

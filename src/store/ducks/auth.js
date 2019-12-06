@@ -12,8 +12,8 @@ export default Creators;
 
 /* Initial State */
 export const INITIAL_STATE = Immutable({
-  signedIn: localStorage.getItem('@officina5:token') !== null,
-  token: localStorage.getItem('@officina5:token') || null,
+  signedIn: localStorage.getItem('@oficina5:token') !== null,
+  token: localStorage.getItem('@oficina5:token') || null,
 });
 
 /* Reducers */
